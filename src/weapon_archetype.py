@@ -3,11 +3,11 @@
 class Archetype:
 
     def __init__(self) -> None:
-        self.baserange = 0
-        self.scaledrange = 0
+        self.base_range = 0
+        self.scaled_range = 0
 
     def calculateRange(self, range_stat):
-        return self.baserange + (self.scaledrange * range_stat)
+        return self.base_range + (self.scaled_range * range_stat)
 
 
 class AutoRifle(Archetype):
@@ -92,8 +92,8 @@ class HandCannon_Aggressive(HandCannon):
 class SMG(Archetype):
     def __init__(self) -> None:
         super().__init__()
-        self.baserange = 14.42
-        self.scaledrange = 0.091
+        self.base_range = 14.42
+        self.scaled_range = 0.091
         self.subfamilies = [
             'Adapative (900 RPM)',
             'Lightweight (900 RPM)',
@@ -133,8 +133,8 @@ class SMG_Aggressive(SMG):
 class PulseRifle(Archetype):
     def __init__(self) -> None:
         super().__init__()
-        self.baserange = 25.5
-        self.scaledrange = 0.1445
+        self.base_range = 25.5
+        self.scaled_range = 0.1445
         self.firing_mode = 'burst'
         self.subfamilies = [
             'Adapative (390 RPM)',
@@ -188,8 +188,8 @@ class PulseRifle_Aggressive(PulseRifle):
 class ScoutRifle(Archetype):
     def __init__(self) -> None:
         super().__init__()
-        self.baserange = 60
-        self.scaledrange = 0.3
+        self.base_range = 60
+        self.scaled_range = 0.3
         self.subfamilies = [
             'Lightweight (200 RPM)',
             'Precision (180 RPM)',
@@ -237,8 +237,8 @@ class ScoutRifle_Aggressive(ScoutRifle):
 class Sidearm(Archetype):
     def __init__(self) -> None:
         super().__init__()
-        self.baserange = 13.2
-        self.scaledrange = 0.048
+        self.base_range = 13.2
+        self.scaled_range = 0.048
         self.firing_mode = 'single'
         self.subfamilies = [
             'Omolon Adapative Frame (491)',
