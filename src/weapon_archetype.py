@@ -1,10 +1,11 @@
 
-
 class Archetype:
 
     def __init__(self) -> None:
         self.base_range = 0
         self.scaled_range = 0
+        self.body_damage = 0
+        self.precision_damage = 0
 
     def calculateRange(self, range_stat):
         return self.base_range + (self.scaled_range * range_stat)
@@ -20,14 +21,14 @@ class AutoRifle(Archetype):
             'Adapative (600 RPM)',
             'Precision (450 RPM)',
             'Rapid-Fire (720 RPM)',
-            'High Impact (360 RPM)'
+            'High-Impact (360 RPM)'
         ]
 
 class Autorifle_Adapative(AutoRifle):
     def __init__(self) -> None:
         super().__init__()
-        self.body_damage = 14.24
-        self.precision_damage = 22.76
+        self.body_damage = 15.01
+        self.precision_damage = 23.40
         self.rpm = 600
 
 
@@ -212,7 +213,7 @@ class ScoutRifle_Precision(ScoutRifle):
         self.precision_damage = 60.73
         self.rpm = 180
 
-class HandCannon_RapidFire(ScoutRifle):
+class ScoutRifle_RapidFire(ScoutRifle):
     def __init__(self) -> None:
         super().__init__()
         self.body_damage = 27.50
