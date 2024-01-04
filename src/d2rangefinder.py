@@ -48,10 +48,8 @@ class D2Rangefinder:
         while (tier_reached < 11):
             if (step == 0):
                 health_count += body_dam
-                logging.debug(health_count)
                 body_count += 1
                 tier_end = bisect.bisect(self.RESILIENCE_VALUES, health_count, lo=tier_reached) - 1
-                logging.debug(str(tier_end))
                 if(tier_end >= tier_reached):
                     resilience_crit_body_ratios.append((tier_reached, tier_end, crit_count, body_count))
                     tier_reached=tier_end + 1
@@ -65,8 +63,6 @@ class D2Rangefinder:
                     resilience_crit_body_ratios.append((tier_reached, tier_end, crit_count, body_count))
                     tier_reached=tier_end + 1
                 step = 0
-            logging.debug('Crit ' + str(crit_count) + ' Body ' + str(body_count) + 
-                          ' health ' + str(health_count) + ' start ' + str(tier_reached) + ' end ' + str(tier_end))
 
 
         return resilience_crit_body_ratios
